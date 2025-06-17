@@ -6,6 +6,15 @@ from .forms import WeatherForm
 
 load_dotenv()
 
+continents_data  = {
+    'Africa': ['Cario', 'Lagos', 'Nairobi'],
+    'Europe' : ['London', 'Paris', 'Berlin'],
+    'Asia':['Tokyo', 'Beijing', 'Mumbai'], 
+    'North America':['New York', 'Toronto', 'Los Angeles'],
+    'South America':['São Paulo', 'Buenos Aires', 'Lima'],
+    'Australia': ['Sydney', 'Melbourne'],
+    }
+
 def home(request):
     weather_data = None
     error = None
@@ -24,7 +33,7 @@ def home(request):
             weather_data = result.json()
         else: 
             error= f"API Error: {result.status_code}"
-        print(result.__dict__)    
-    return render(request, 'forecast/index.html', {'form': form, 'weather_data':weather_data, 'error': error})
+        
+    return render(request, 'forecast/index.html', {'form': form, 'weather_data':weather_data, 'error': error,'continents_data':continents_data})
 
 

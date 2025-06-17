@@ -26,7 +26,14 @@ SECRET_KEY = "django-insecure-&oeo7b@g*e@4#%*_-ay2gaw&yyol4bs&jzr)cttvsqm+&9u=f2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    os.getenv('REPLIT_HOST', ''),  # optional dynamic host
+    '273f9bea-f9f8-41f6-bb13-1c1122d6cd3e-00-3lkd733j4evi8.sisko.replit.dev',
+    os.getenv('RAILWAY_STATIC_URL', '*')
+]
 
 
 # Application definition
@@ -52,6 +59,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "weather_dashboard.urls"
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.replit.dev',
+    'https://*.railway.app'
+]
 
 TEMPLATES = [
     {
@@ -119,6 +130,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATICROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

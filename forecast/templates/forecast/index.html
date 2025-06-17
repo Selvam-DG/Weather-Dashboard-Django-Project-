@@ -9,11 +9,20 @@
 </head>
 <body>
     <h1>  Weather Forecast</h1>
+    
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
         <button type="submit">Get Forecast</button>
     </form>
+    
+    
+    {% for continent, cities in continents_data.items %}   
+        <div class="card">   
+           <h3> {{continent}}</h3> 
+        </div>
+    {% endfor %}
+    
     {% if error %}
         <p style="color:red;">{{error}}</p>
     {% endif %}
