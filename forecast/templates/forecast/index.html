@@ -16,14 +16,6 @@
         <button type="submit">Get Forecast</button>
     </form>
     
-    <! --
-    {% for continent, cities in continents_data.items %}   
-        <div class="card">   
-           <h3> {{continent}}</h3> 
-        </div>
-    {% endfor %}
-    -->
-    
     {% if error %}
         <p style="color:red;">{{error}}</p>
     {% endif %}
