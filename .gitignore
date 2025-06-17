@@ -1,0 +1,28 @@
+#python
+__pycache__/
+*.py[cod]
+*.pyo
+
+#Django
+*.sqlite3
+*.log
+
+#Virtualenvironment
+virtual_env/
+venv/
+env/
+
+#VSCODE and IDES
+.VSCODE/
+.idea/
+
+#Environment variables
+.env
+
+# Replit
+.Replit
+replit.nix
+
+#os files
+.DS_Store
+Thumbs.db
