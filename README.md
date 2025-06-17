@@ -12,7 +12,7 @@ A Django web application that shows weather forecasts for a given location using
 
 ##  Live Demo
 
-[Click to open live demo](https://273f9bea-f9f8-41f6-bb13-1c1122d6cd3e-00-3lkd733j4evi8.sisko.replit.dev/)
+[Click to open live demo](https://weather-dashboard-django.onrender.com)
 
 ## Project Structure
 ```
